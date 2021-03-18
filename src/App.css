@@ -1,0 +1,16 @@
+.App{
+  display: flex;
+}
+
+
+.player{
+  display: flex;
+  width: 50vw;
+  height: 100vh;
+  justify-content: center;
+}
+
+
+.active{
+  background-color: blue;
+}
