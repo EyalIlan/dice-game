@@ -1,16 +1,37 @@
 .App{
   display: flex;
+  position: relative;
 }
 
+
+.boardSettings{
+  position: absolute;
+  background-color: saddlebrown;
+  height: 100vh;
+  width: 200px;
+  left: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
 .player{
   display: flex;
   width: 50vw;
   height: 100vh;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 
 .active{
   background-color: blue;
+}
+
+
+
+.testing{
+  text-align: center;
+  background-color: red;
 }
