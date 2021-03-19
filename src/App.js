@@ -7,7 +7,7 @@ class App extends  React.Component{
 
   state ={
 
-    player1Score:0,
+    player1Score:1,
     player2Score:0,
     currentScore1:0,
     currentScore2:0,
