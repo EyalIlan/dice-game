@@ -17,7 +17,7 @@ export default class Components extends Component {
         }
 
         return (
-            <div className ={"player " + Active}>
+            <div className ={"player " + Active + ` player${this.props.playerNumber}`}>
                 <div>
                 <h1>Player{this.props.playerNumber}</h1>
                 <h1>{this.props.Score}</h1>

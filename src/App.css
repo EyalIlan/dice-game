@@ -1,7 +1,13 @@
+
+@font-face{
+  src: url(./Fonts/hero.ttf);
+  font-family: hero;
+}
+
 .App{
   display: flex;
   position: relative;
- 
+  font-family: hero,sans-serif;
 }
 
 
@@ -23,6 +29,13 @@
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+
+.player1{
+
+  background-image: url('./images/bg8.png');
 }
 
 
@@ -31,8 +44,6 @@
 }
 
 
-
-.testing{
   text-align: center;
   background-color: red;
 }
