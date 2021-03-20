@@ -19,6 +19,7 @@ class App extends React.Component {
     image1: "",
     image2: "",
     ponitsToWin: 100,
+    showPic:'notShow'
   };
 
   getCurrentScore = (score) => {
@@ -60,12 +61,15 @@ class App extends React.Component {
   };
 
   RollDices = (e) => {
+    
+    
+
     let cube1 = Math.floor(Math.random() * 6 + 1);
     let cube2 = Math.floor(Math.random() * 6 + 1);
-
     this.setState({
       image1: `dice${cube1}`,
       image2: `dice${cube2}`,
+      showPic:''
     });
 
     this.getCurrentScore(cube1 + cube2);
@@ -90,9 +94,11 @@ class App extends React.Component {
     let display;
 
     if(this.state.players[this.state.turn-1].score >= this.state.ponitsToWin){
-      display = (<WinningPage playerNumber = {this.state.turn}></WinningPage>)
+      display = (<WinningPage playerNumber = {this.state.turn}  Restart = {this.NewGame}></WinningPage>)
     }else{
-     display = ( <div className="App">
+    
+     display = ( 
+     <div className="App">
       <Player
         playerNumber="1"
         turn={this.state.turn}
@@ -107,13 +113,14 @@ class App extends React.Component {
       ></Player>
 
       <div className="boardSettings">
-        <button onClick={this.NewGame}>New game</button>
-        <img src={`/images/` + this.state.image1 + ".png"} alt="" />
-        <img src={`/images/` + this.state.image2 + ".png"} alt="" />
-        <button onClick={this.RollDices}>Roll Dice</button>
-        <button onClick={this.HoldPoints}>Hold</button>
+        <button onClick={this.NewGame} className="btn btn1">New game</button>
+        <img className={this.state.showPic}  src={`/images/` + this.state.image1 + ".png"} />
+        <img className={this.state.showPic} src={`/images/` + this.state.image2 + ".png"} />
+        <button onClick={this.RollDices} className="btn btn2">Roll Dice</button>
+        <button onClick={this.HoldPoints} className="btn btn1">Hold</button>
       </div>
-    </div>)
+    </div>
+    )
     }
 
     return (

@@ -13,14 +13,23 @@
 
 .boardSettings{
   position: absolute;
-  background-color: saddlebrown;
+  /* background-color: saddlebrown; */
   height: 100vh;
   width: 200px;
   left: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  z-index: 20;
 }
+
+.boardSettings img{
+  width: 150px;
+  height: 150px;
+  
+}
+
 
 .player{
   display: flex;
@@ -35,13 +44,160 @@
 
 .player1{
 
-  background-image: url('./images/bg8.png');
+ position: relative;
+ z-index: 1;
+}
+
+.player1::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.8;
+  background-image: url('./images/bg4.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.player2{
+  position: relative;
+  z-index: 1;
+ }
+ 
+ .player2::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.8;
+  background-image: url('./images/bg3.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.active1{
+ background-color: blue;
+}
+.active2{
+ background-color: red;
 }
 
 
-.active{
+.notShow{
+  opacity: 0;
+}
+
+
+.scoreContainer{
+ 
+  padding: 10px 50px;
+  font-size: 25px;
+  position: relative;
+  font-weight: bold;
+  z-index: 1;
+ 
+}
+
+.scoreContainer::before{
+    content: '';
+    position: absolute;
+    border: 4px solid black;
+    padding: 10px 50px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.6;
+    /* background-color: red; */
+    
+  
+}
+
+.scoreContainer1{
+  background-size: cover;
+  z-index: 1;
+  color: rgb(255, 255, 255); 
+  position: relative;
+  background-color: blue;
+  background-image: url('./images/avatar2.png');
+  background-size: cover;
+}
+
+
+
+.scoreContainer2{
+  position: relative;
+  z-index: 1;
+  background-color: red;
+  background-image: url('./images/avatar5.png');
+  background-size: cover;
+  color: orange
+}
+
+.currnetScore{
+  padding: 30px;
+  border: 4px solid black;
+  font-size: 18px;
+}
+
+.currnetScore1{
+  background-color: blue;
+  color: white;
+}
+.currnetScore2{
+  background-color: red;
+  color: orange;
+}
+
+
+.btn{
+  width: 100%;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 25px;
+  font-family: hero;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.btn:active{
+  transform: scale(0.98);
+}
+
+.btn1{
+  color: white;
   background-color: blue;
 }
+.btn2{
+  color: orange;
+  background-color: red;
+}
 
 
+.Winning{
+  display: flex;
+  height: 100vh;
+  font-size: 35px;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
+  
+}
 
+.Winning2{
+  background-image: url('./images/bg2.png');
+  background-size: cover;
+  color: orange;
+}
+.Winning1{
+  color: rgb(0, 17, 255);
+  background-image: url('./images/bg8.png');
+  background-size: cover;
+}

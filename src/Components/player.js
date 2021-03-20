@@ -11,21 +11,21 @@ export default class Components extends Component {
         let Active;
 
         if(this.props.turn == this.props.playerNumber){
-            Active = 'active'
+            Active = `active${this.props.turn}`
         }else{
             Active = 'unactive'
         }
 
         return (
             <div className ={"player " + Active + ` player${this.props.playerNumber}`}>
-                <div>
-                <h1>Player{this.props.playerNumber}</h1>
+                <div className={`scoreContainer `+`scoreContainer${this.props.playerNumber}` }>
+                <h1>Player {this.props.playerNumber}</h1>
                 <h1>{this.props.Score}</h1>
                 </div>
                 <div>
-                    <div className="testing">
+                    <div className={"currnetScore " + `currnetScore${this.props.playerNumber}`}>
                     <h1>
-                        currentScore
+                        current Score
                     </h1>
                     <h1>
                         {this.props.currentScore}
